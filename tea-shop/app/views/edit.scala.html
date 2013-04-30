@@ -1,0 +1,3 @@
+@(id: Int, supplierOptions: Seq[(String, String)], colorOptions: Seq[(String, String)], teaForm: Form[TeaCommand])
+
+@teaform(routes.Application.update(id), supplierOptions, colorOptions, teaForm)

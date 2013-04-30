@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.ebiz.training.scala</groupId>
+	<artifactId>scala-exercices</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<developers>
+		<developer>
+			<id>slandelle@excilys.com</id>
+			<name>Stephane Landelle</name>
+			<organization>eBusiness Information, Excilys Group</organization>
+		</developer>
+	</developers>
+
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<scala.version>2.10.1</scala.version>
+		<scala-maven-plugin.version>3.1.4</scala-maven-plugin.version>
+	</properties>
+
+	<build>
+		<sourceDirectory>src/main/scala</sourceDirectory>
+		<testSourceDirectory>src/test/scala</testSourceDirectory>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>net.alchim31.maven</groupId>
+					<artifactId>scala-maven-plugin</artifactId>
+					<version>${scala-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>add-source</goal>
+								<goal>compile</goal>
+								<goal>testCompile</goal>
+							</goals>
+							<configuration>
+								<args>
+									<arg>-encoding</arg>
+									<arg>UTF-8</arg>
+									<arg>-target:jvm-1.6</arg>
+									<arg>-deprecation</arg>
+									<arg>-feature</arg>
+									<arg>-unchecked</arg>
+									<arg>-language:implicitConversions</arg>
+									<arg>-language:postfixOps</arg>
+								</args>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

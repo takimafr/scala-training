@@ -1,0 +1,21 @@
+@(action: Call, supplierOptions: Seq[(String, String)], colorOptions: Seq[(String, String)], teaForm: Form[TeaCommand])
+
+@import helper._
+@import Application.TeaForm._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f)}
+
+@main("Welcome to the Tea Shop") {
+    
+    @form(action = action) {
+    <fieldset>
+	    @inputText(teaForm(name))
+	    @select(teaForm(color), colorOptions,'_label -> "Color", '_default -> "--- Choose a Color ---", '_showConstraits -> false)
+	    @select(teaForm(supplierId), supplierOptions, '_label -> "Supplier", '_default -> "--- Choose a Supplier ---", '_showConstraits -> false)
+	    @inputText(teaForm(size))
+	    @inputText(teaForm(currency))
+	    @inputText(teaForm(price))
+    </fieldset>
+	
+	<input type="submit" value="Save" />
+    	}
+}

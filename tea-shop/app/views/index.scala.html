@@ -1,0 +1,25 @@
+@(loginForm: Form[(String, String)])(implicit flash: Flash)
+
+@import helper._
+@import Application.LoginForm._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f)}
+
+@main("Welcome to the Tea Shop") {
+    
+	<section id="message">
+		@flash.get("message").map { message =>
+		<div class="alert-message warning">
+			<strong>@message</strong>
+		</div>
+		}.getOrElse("")
+	</section>
+    
+    @form(action = routes.Application.login) {
+    <fieldset>
+	    @inputText(loginForm(login))
+	    @inputPassword(loginForm(password))
+    </fieldset>
+	
+	<input type="submit" value="Login" />
+    	}
+}

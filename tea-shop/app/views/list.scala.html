@@ -1,0 +1,17 @@
+@(teas: Iterable[(Tea, Supplier)])
+
+@main("Welcome to the Tea Shop") {
+    
+    <ul>
+    		@teas.map { case (tea, supplier) =>
+    		<li>
+    			@supplier.name - @tea.name
+    			<a href="@routes.Application.view(tea.id)">View</a>
+    			<a href="@routes.Application.edit(tea.id)">Edit</a>
+    			<a href="@routes.Application.delete(tea.id)">Delete</a>
+    		</li>
+    		}
+    	</ul>
+    	
+    	<a href="@routes.Application.create">New</a>
+}

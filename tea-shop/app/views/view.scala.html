@@ -1,0 +1,12 @@
+@(tea: Tea, supplier: Supplier)
+
+@main("Welcome to the Tea Shop") {
+    
+    <ul>
+    		<li>@tea.name</li>
+    		<li>@tea.color</li>
+    		<li>@supplier.name</li>
+    		<li>@tea.size</li>
+    		<li>@tea.currency @tea.price</li>
+    	</ul>
+}
